@@ -20,6 +20,7 @@ import MyTips from './components/MyTips.jsx';
 import UpdateTip from './components/UpdateTip.jsx';
 import ExploreGardeners from './components/ExploreGardeners.jsx';
 import Error from './components/Error.jsx';
+import PrivateRoute from './provider/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
   },
   {
         path:'/share-tip',
-        element:<ShareGardenTips></ShareGardenTips>
+        element:<PrivateRoute><ShareGardenTips></ShareGardenTips></PrivateRoute>
       },
       {
         path:'/tips',
@@ -58,15 +59,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/tips/:id',
-        element: <TipDetails></TipDetails>
+        element: <PrivateRoute><TipDetails></TipDetails></PrivateRoute>
       },
       {
         path: '/my-tips',
-        element: <MyTips></MyTips>
+        element: <PrivateRoute><MyTips></MyTips></PrivateRoute>
       },
       {
         path: '/update-tip/:id',
-        element: <UpdateTip></UpdateTip>
+        element: <PrivateRoute><UpdateTip></UpdateTip></PrivateRoute>
       },
       {
         path: '/gardeners',
