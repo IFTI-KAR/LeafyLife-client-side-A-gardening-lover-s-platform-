@@ -12,7 +12,7 @@ const MyTips = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/tips/user?email=${user.email}`)
+      fetch(`https://leafylife-server.vercel.app/tips/user?email=${user.email}`)
         .then(res => res.json())
         .then(data => {
           setMyTips(Array.isArray(data) ? data : []);
@@ -36,7 +36,7 @@ const MyTips = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/tips/${id}`, {
+        fetch(`https://leafylife-server.vercel.app/tips/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

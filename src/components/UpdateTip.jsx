@@ -12,7 +12,7 @@ const UpdateTip = () => {
   const [tipData, setTipData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/tips/${id}`)
+    fetch(`https://leafylife-server.vercel.app/tips/${id}`)
       .then(res => res.json())
       .then(data => setTipData(data))
       .catch(err => console.error("Failed to fetch tip:", err));
@@ -33,7 +33,7 @@ const UpdateTip = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:3000/tips/${id}`, {
+      const res = await fetch(`https://leafylife-server.vercel.app/tips/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedTip),

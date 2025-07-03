@@ -19,7 +19,7 @@ const Register = () => {
   // Save gardener info to backend
   const saveGardener = async (gardenerData) => {
     try {
-      const res = await fetch('http://localhost:3000/gardeners', {
+      const res = await fetch('https://leafylife-server.vercel.app/gardeners', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(gardenerData),

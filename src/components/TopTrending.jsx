@@ -13,7 +13,7 @@ const TopTrending = () => {
 
   // Fetch tips sorted by totalLiked desc
   const fetchTips = () => {
-    fetch('http://localhost:3000/tips/trending')
+    fetch('https://leafylife-server.vercel.app/tips/trending')
       .then(res => res.json())
       .then(data => {
         // Sort tips by totalLiked descending
@@ -30,7 +30,7 @@ const TopTrending = () => {
     if (likedTips.includes(tipId)) return; // Already liked
 
     try {
-      const res = await fetch(`http://localhost:3000/tips/like/${tipId}`, {
+      const res = await fetch(`https://leafylife-server.vercel.app/tips/like/${tipId}`, {
         method: 'PATCH',
       });
       if (res.ok) {

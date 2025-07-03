@@ -23,7 +23,7 @@ const ShareGardenTips = () => {
         };
 
         try {
-            const res = await fetch('http://localhost:3000/tips', {
+            const res = await fetch('https://leafylife-server.vercel.app/tips', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

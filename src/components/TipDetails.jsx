@@ -10,7 +10,7 @@ const TipDetails = () => {
   const [tip, setTip] = useState(null);
 
   const fetchTip = () => {
-    fetch(`http://localhost:3000/tips/${id}`)
+    fetch(`https://leafylife-server.vercel.app/tips/${id}`)
       .then(res => res.json())
       .then(data => setTip(data));
   };
@@ -20,7 +20,7 @@ const TipDetails = () => {
   }, [id]);
 
   const handleLike = async () => {
-    await fetch(`http://localhost:3000/tips/like/${id}`, {
+    await fetch(`https://leafylife-server.vercel.app/tips/like/${id}`, {
       method: 'PATCH'
     });
     fetchTip(); // Refresh after like

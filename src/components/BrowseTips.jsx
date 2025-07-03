@@ -9,7 +9,7 @@ const BrowseTips = () => {
   const [difficultyFilter, setDifficultyFilter] = useState('All');
 
   useEffect(() => {
-    fetch('http://localhost:3000/tips')
+    fetch('https://leafylife-server.vercel.app/tips')
       .then(res => res.json())
       .then(data => {
         setTips(data);

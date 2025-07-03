@@ -6,7 +6,7 @@ const Featured = () => {
   const [gardeners, setGardeners] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/gardeners/featured')
+    fetch('https://leafylife-server.vercel.app/gardeners/featured')
       .then(res => res.json())
       .then(data => setGardeners(data));
   }, []);
